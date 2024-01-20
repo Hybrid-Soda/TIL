@@ -4,6 +4,7 @@ def count_character(string, alpbt):
     for i in string:
         if i == alpbt:
             count += 1
+
     return count
 
 
