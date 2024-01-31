@@ -4,10 +4,10 @@ import sys
 sys.stdin = open("input.txt")
 
 for tc in range(1, 11):
-    # 덤프 횟수
+    # 덤프 횟수 및 박스가 쌓여있는 형상
     dump = int(input())
-    # 박스가 쌓여있는 모습
     box = list(map(int, input().split()))
+
     # 덤프 횟수만큼 순회
     for i in range(dump):
         # 최대점에서 최소점에 박스를 옮김
