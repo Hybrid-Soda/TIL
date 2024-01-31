@@ -13,6 +13,10 @@ for tc in range(1, 11):
         # 최대점에서 최소점에 박스를 옮김
         box[box.index(max(box))] -= 1
         box[box.index(min(box))] += 1
+
+        # 최대 - 최소 차이가 1개 이하이면 종료
+        if max(box) - min(box) <= 1:
+            break
     
     # 순회가 끝난 후 최고점과 최저점의 높이차를 출력
     print(f'#{tc} {max(box)-min(box)}')
