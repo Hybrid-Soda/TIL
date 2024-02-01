@@ -6,11 +6,7 @@ sys.stdin = open("input.txt")
 for tc in range(10):
     test_case = int(input())
     arr = [list(map(int, input().split())) for _ in range(100)]
-    # 세로 계산을 위한 회전 행렬
-    turn_arr = [[0] * 100 for _ in range(100)]
-    for i in range(100):
-        for j in range(100):
-            turn_arr[i][j] = arr[99-j][i]
+    turn_arr = list(zip(*arr))  # 세로 계산을 위한 회전 행렬
 
     # 최대값 초기화
     row_max, col_max = 0, 0

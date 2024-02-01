@@ -3,11 +3,13 @@
 # 큰 수와 작은 수를 번갈아 정렬
 
 import sys
+import sort
 sys.stdin = open('input.txt')
 
 for tc in range(int(input())):
     N = int(input())
-    arr = sorted(list(map(int, input().split())))
+    arr = list(map(int, input().split()))
+    arr = sort.counting_sort(arr, N)
     sort_arr = []
 
     # 정렬된 배열의 뒤-앞의 숫자를 새로운 배열에 추가
