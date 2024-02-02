@@ -11,10 +11,9 @@ for tc in range(int(input())):
 
     for i in word:
         # 스택이 비어있다면 문자 추가 / 아니면 다음 조건문
-        if stack == []:
+        if not stack:
             stack.append(i)
         else:
-
             # 반복문자이면 제거 / 아니면 문자 추가
             if i == stack[-1]:
                 stack.pop()
