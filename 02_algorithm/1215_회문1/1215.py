@@ -9,7 +9,7 @@ for tc in range(10):
     turn_board = [list(tuple) for tuple in zip(*board)]
     ans = 0
     
-    # 가로
+    # 가로 방향으로 회문 찾기
     for row in board:
         for col in range(9-N):
             rvs = row[col:col+N]
@@ -17,7 +17,7 @@ for tc in range(10):
             if row[col:col+N] == rvs:
                 ans += 1
     
-    # 세로
+    # 세로 방향으로 회문 찾기
     for row in turn_board:
         for col in range(9-N):
             rvs = row[col:col+N]
