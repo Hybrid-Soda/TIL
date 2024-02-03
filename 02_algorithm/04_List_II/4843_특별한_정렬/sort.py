@@ -28,9 +28,8 @@ def counting_sort(arr, N):
     # arr의 마지막 원소부터 정렬 (N-1 -> 0)
     for i in range(N-1, -1, -1):
         # 개수를 인덱스로 변환
-        idx = count[arr[i]]
-        idx -= 1
-        sort_arr[idx] = arr[i]
+        count[arr[i]] -= 1
+        sort_arr[count[arr[i]]] = arr[i]
 
     return sort_arr
 

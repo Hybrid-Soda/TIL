@@ -29,7 +29,7 @@ for tc in range(int(input())):
     words2 = list(zip(*words1))
 
     # 함수 실행 후 회문 반환
-    palindrome = test(words1, words2, N, M)
+    palindrome = ''.join(test(words1, words2, N, M))
 
     # 회문 출력
-    print(f'#{tc+1}', ''.join(palindrome))
+    print(f'#{tc+1}', palindrome)
