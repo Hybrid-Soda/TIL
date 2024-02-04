@@ -11,7 +11,6 @@ for tc in range(10):
     # 테이블 및 스택의 위쪽이 N극 (1) / 아래쪽이 S극 (2)
     table = [list(map(int, input().split())) for _ in range(N)]
     deadlock = 0
-    stack = []
 
     for i in range(N):
         stack = []
