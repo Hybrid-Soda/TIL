@@ -1,4 +1,8 @@
-3
+5
+rithm
+a pattern matching algorithm
+ABCDABCEF
+ABCDABCDFABCDABCEFABCDABCEF
 XYPV
 EOGGXYPVSY
 STJJ
