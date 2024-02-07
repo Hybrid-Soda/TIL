@@ -3,6 +3,36 @@
 import sys
 sys.stdin = open('input.txt')
 
+''' 스택 사용한 코드 '''
+for tc in range(int(input())):
+    code = list(input())
+    stack = []
+    ans = 0
+
+    # 주어진 코드 순회
+    for char in code:
+        # stack에 원소가 있을때
+        if not stack:
+            if char in ['{', '(']:
+                stack.append(char)
+            elif char in ['}', ')']:
+                stack.append(char)
+                break
+        # stack에 원소가 없을때
+        else:
+            if char in ['{', '(']:
+                stack.append(char)
+            elif char in ['}', ')']:
+                if (stack[-1] == '{' and char == '}') or (stack[-1] == '(' and char == ')'):
+                    stack.pop()
+                else:
+                    break
+
+    # 남은 괄호가 없으면 1, 있으면 0 출력
+    print(f'#{tc + 1} {0 if stack else 1}')
+
+
+''' 스택 사용하지 않은 코드 '''
 for tc in range(int(input())):
     code = list(input())
     sample = ''

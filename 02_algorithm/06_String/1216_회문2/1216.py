@@ -14,19 +14,17 @@ for tc in range(10):
     # 찾는 문자열의 길이
     for N in range(1, 25):
         # 가로 방향으로 회문 찾기
-        for row in board:
+        for row in range(100):
             for col in range(101-N):
-                rvs = row[col:col+N]
-                rvs.reverse()
-                if row[col:col+N] == rvs:
-                    max_length = len(rvs)
+                if row[col:col+N] == row[col+N-1:col-1:-1]:
+                    max_length = N
+                if row[col:col+N] == row[col+N-1:col-1:-1]:
+                    max_length = N
         
         # 세로 방향으로 회문 찾기
         for row in turn_board:
             for col in range(101-N):
-                rvs = row[col:col+N]
-                rvs.reverse()
-                if row[col:col+N] == rvs:
-                    max_length = len(rvs)
+                if row[col:col+N] == row[col+N-1:col-1:-1]:
+                    max_length = N
 
     print(f'#{test_case} {max_length}')
