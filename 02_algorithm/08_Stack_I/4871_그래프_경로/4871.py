@@ -4,21 +4,15 @@ import sys
 sys.stdin = open("input.txt")
 
 for tc in range(int(input())):
-    # 노드 개수, 간선 개수
-    node_num, route_num = map(int, input().split())
-    # 루트 입력 -> 예시 : [[], [4, 3], [3, 5], [], [6], []]
-    routes = [[] for _ in range(node_num+1)]
-    for _ in range(route_num):
-        s, e = map(int, input().split())
+    V, E = map(int, input().split())         # 노드 개수, 간선 개수
+    routes = [[] for _ in range(V+1)]        # 루트 배열
+    for _ in range(E):                       # 루트 입력 예시 [[], [4, 3], [3, 5], [6], []]
+        s, e = map(int, input().split())     # 인덱스가 시작점 / 값이 도착점
         routes[s].append(e)
-    # 시작점, 도착점
-    start, end = map(int, input().split())
-    # 방문 장소 체크
-    visit = [0] * (node_num+1)
-    # 스택 시작점 할당
-    stack = [start]
-    # 답
-    is_exist = 0
+    start, end = map(int, input().split())   # 시작점, 도착점
+    visit = [0] * (V+1)                      # 방문 장소 체크
+    stack = [start]                          # 스택 시작점 할당
+    is_exist = 0                             # 답
 
     # DFS : 스택에 원소가 없거나 도착점에 도달하면 종료
     while stack:
