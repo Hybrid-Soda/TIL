@@ -1,5 +1,8 @@
 # 2005 파스칼의 삼각형
 
+import sys
+sys.stdin = open("input.txt")
+
 # 팩토리얼 계산
 def facto(n):
     if n <= 1:
@@ -20,6 +23,32 @@ def combination(n):
 for tc in range(int(input())):
     N = int(input())
     print(f'#{tc+1}')
-
     for i in range(N):
         print(*combination(i))
+
+# --------------------------------------------
+# 기가 맥힌 코드
+# 한계 : 5까지만 가능
+'''
+for tc in range(int(input())):
+    N = int(input())
+    print(f'#{tc+1}')
+    for i in range(N):
+        print(' '.join(str(11 ** i)))
+'''
+# --------------------------------------------
+# 정석 DP 코드
+sys.stdin = open("input.txt")
+
+memo = [[1] * 10 for _ in range(10)]
+
+for i in range(1, 10):
+    for j in range(1, 10):
+        if i != j:
+            memo[i][j] = memo[i-1][j-1] + memo[i-1][j]
+
+for tc in range(int(input())):
+    N = int(input())
+    print(f'#{tc+1}')
+    for i in range(N):
+        print(*memo[i][:i+1])
