@@ -9,8 +9,7 @@ for tc in range(int(input())):
     time = sorted(list(map(int, input().split())))  # 고객 별 도착 시간
     fst = min(time)  # 최초 손님 도착 시간
     bread = fst//M*K  # 최초 손님 도착 전까지 만들어 둔 빵
-    term = fst % M  # 빵 만들어 두고 남은 텀
-    
+
     # 최초 손님 도착 시간 < 제작 시간 : 즉시 실패
     if fst < M:
         print(f'#{tc+1} Impossible')
@@ -21,6 +20,13 @@ for tc in range(int(input())):
         print(f'#{tc+1} Possible')
         continue
 
-    stack = []
-    print(fst//M)
-    print(term)
+    ans = 'Possible'
+    for i in range(N):
+        # 손님 도착 시 남아있는 붕어빵 재고
+        stock = time[i]//M*K - (i+1)
+        # 재고가 없다면 실패
+        if stock < 0:
+            ans = 'Impossible'
+            break
+    
+    print(f'#{tc+1} {ans}')
