@@ -22,7 +22,6 @@ for tc in range(int(input())):
     while Q:
         i, j, dist = Q.popleft()
 
-        # 델타 탐색
         for di, dj in dr:
             ni = i + di; nj = j + dj
             if 0<=ni<N and 0<=nj<N:
@@ -32,7 +31,7 @@ for tc in range(int(input())):
                 # 통로를 찾으면 queue에 좌표와 거리를 추가
                 if maze[ni][nj] == '0':
                     Q.append((ni, nj, dist+1))
-        # 델타 탐색에서 3을 찾지 못했다면 현재 점 표시 후 다음으로 이동
+        # 3을 찾지 못했다면 현재 점 표시 후 다음으로 이동
         else:
             maze[i][j] = '1'
             continue

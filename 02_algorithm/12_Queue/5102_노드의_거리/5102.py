@@ -3,13 +3,14 @@
 
 import sys
 from collections import deque
-sys.stdin = open('input.txt')
+
+sys.stdin = open("input.txt")
 
 for tc in range(int(input())):
     # V: 노드 개수 / E: 간선 개수
     V, E = map(int, input().split())
     # 경로 정보
-    routes = [[] for _ in range(V+1)]
+    routes = [[] for _ in range(V + 1)]
     for _ in range(E):
         start, end = map(int, input().split())
         routes[start].append(end)
@@ -17,8 +18,8 @@ for tc in range(int(input())):
     # S: 출발 노드 / G: 도착 노드
     S, G = map(int, input().split())
     # 각 노드별 출발점으로부터 거리
-    distance = [0] * (V+1)
-    
+    distance = [0] * (V + 1)
+
     # BFS - Q에 원소가 없으면 종료
     # 원소가 없어서 종료되었다는 뜻은 도착 노드까지 연결되어 있지 않다는 뜻
     Q = deque([S])
@@ -34,5 +35,4 @@ for tc in range(int(input())):
                 Q.append(next)
                 distance[next] = distance[now] + 1
 
-    print(f'#{tc+1} {distance[G]}')
-
+    print(f"#{tc+1} {distance[G]}")
