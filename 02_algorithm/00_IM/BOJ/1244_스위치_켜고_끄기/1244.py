@@ -19,7 +19,9 @@ for gen, num in student:
     else:  # 여자이면
         switch[num] = (switch[num] + 1) % 2
         i = 1
+        # 끝 단 스위치까지 가면 종료
         while 1 <= num - i and num + i <= N:
+            # 스위치가 대칭일 때 바꿈
             if switch[num - i] == switch[num + i]:
                 switch[num - i] = (switch[num - i] + 1) % 2
                 switch[num + i] = (switch[num + i] + 1) % 2
@@ -29,5 +31,6 @@ for gen, num in student:
 
 for k in range(1, N+1):
     print(switch[k], end=" ")
+    # 20줄이 넘어가면 줄바꿈
     if k % 20 == 0:
         print()
