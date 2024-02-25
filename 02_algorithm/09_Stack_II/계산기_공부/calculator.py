@@ -17,6 +17,7 @@ postfix = []
 stack = []
 
 for token in infix:
+    print(stack, ' / postfix:', postfix)
     if token.isdecimal() == True:
         postfix.append(token)
     elif token in '(+-*/':
