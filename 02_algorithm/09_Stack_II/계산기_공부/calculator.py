@@ -43,7 +43,6 @@ postfix = '6528-*2/+'
 stack = []
 
 for char in postfix:
-    print(stack)
     if char.isdecimal() == True:
         stack.append(char)
     else:
