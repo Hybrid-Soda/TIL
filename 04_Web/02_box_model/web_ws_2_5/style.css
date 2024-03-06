@@ -1,0 +1,143 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+h1 {
+  font-size: xx-large;
+  text-align: center;
+  color: #ffffff;
+}
+
+.banner {
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  background-color: #333;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #666;
+  z-index: 999;
+}
+
+.nav p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 90%;
+  margin: 0.5em 0;
+}
+
+.nav span.line {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #333;
+  overflow: hidden;
+  margin: auto 6px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: start;
+  margin: 30px 0;
+}
+
+.book-container {
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  width: 300px;
+  padding: 20px;
+  margin: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.book-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.book-author {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.book-description {
+  font-size: 14px;
+  color: #888;
+}
+
+.section-title {
+  top: 0px;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+.top-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.top-button a {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  color: #fff;
+  border: none;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.book-container img {
+  width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.banner .copyright {
+  color: white;
+  text-align: center;
+  font-size: x-small;
+  padding: 10px;
+}
