@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .card {
+      box-sizing: border-box;
+      border: 1px solid black;
+      width: 340px;
+      height: 544px;
+      padding: 22px;
+    }
+
+    .image-name {
+      position: relative;
+    }
+
+    .image-name img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 8px;
+    }
+
+    .image-name p {
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      width: 100%;
+      margin: 0;
+      padding: 5px 0;
+    }
+
+    .image-name .color-box {
+      height: 36px;
+      background: rgb(255, 145, 0);
+      opacity: 0.5;
+    }
+
+    .image-name .name {
+      font-weight: bolder;
+      font-size: 30px;
+    }
+
+    .card > p {
+      text-align: start;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="image-name">
+      <img src="profile.jpg" alt="Profile Image">
+      <p class="color-box"></p>
+      <p class="name">Name</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde officiis ad nostrum. Laboriosam mollitia similique provident fuga tenetur saepe sit, amet eaque neque eius quaerat expedita ea illum veniam.</p>
+  </div>
+</body>
+</html>
