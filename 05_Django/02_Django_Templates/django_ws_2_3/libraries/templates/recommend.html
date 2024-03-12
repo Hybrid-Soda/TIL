@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>주목할 만한 신간 도서 목록</h1>
+  {% for info in result %}
+    {% for key, value in info.items %}
+      {% if key == '제목' %}
+        <p>제목: {{ value }}<p>
+      {% elif key == '저자' %}
+        <p>저자: {{ value }}<p>
+      {% endif %}
+    {% endfor %}
+    <hr>
+  {% endfor %}
+</body>
+</html>
