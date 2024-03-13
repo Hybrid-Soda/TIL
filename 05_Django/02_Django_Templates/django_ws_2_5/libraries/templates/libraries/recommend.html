@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  {% extends "base.html" %}
+
+  {% block content %}
+    <h3 class="my-5 fw-bold">주목할 만한 신간 도서 목록</h3>
+    {% for item in result %}
+      <div class="text-start">
+        <p class="fw-bold">{{ item.title }}</p>
+        <p>{{ item.author }}</p>
+      </div>
+      <hr>
+    {% endfor %}
+  {% endblock content %}
+</body>
+</html>
