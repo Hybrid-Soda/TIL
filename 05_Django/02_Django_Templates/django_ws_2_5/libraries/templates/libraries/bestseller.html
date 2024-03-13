@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .rank {
+      margin-bottom: 20px;
+      padding-block: 15px;
+      border-top: 4px solid black;
+      border-bottom: 4px solid black;
+    }
+  </style>
+</head>
+<body>
+  {% extends "base.html" %}
+
+  {% block content %}
+    <h3 class="my-5 fw-bold">베스트 셀러 목록</h3>
+    {% for item in result %}
+      {% if forloop.counter == 1 %}
+        <p class="fw-bold">1위</p>
+        <div class="rank" style="border-color: #B0A695;">
+      {% elif forloop.counter == 2 %}
+        <p class="fw-bold">2위</p>
+        <div class="rank" style="border-color: #EBE3D5;">
+      {% elif forloop.counter == 3 %}
+        <p class="fw-bold">3위</p>
+        <div class="rank" style="border-color: #F3EEEA;">
+      {% else %}
+        <div class="text-start pb-3 mb-3 border-bottom">
+      {% endif %}
+        <p class="fw-bold">{{ item.title }}</p>
+        <p>{{ item.author }}</p>
+        <p class="text-secondary m-0" style="font-size: small;">{{ item.bestDuration }}</p>
+      </div>
+    {% endfor %}
+  {% endblock content %}
+</body>
+</html>
