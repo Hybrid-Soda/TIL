@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% comment %} {% extends "articles/base.html" %} {% endcomment %}
+
+{% block style %}
+{% comment %} 
+  class로 따로 부여하지 않고,
+  동일한 h1 요소라면...
+  선언 순서상... 내 h1 속성 적용
+{% endcomment %}
+  <style>
+    .index-h1 {
+      color: blue
+    }
+  </style>
+{% endblock style %}
+
+{% comment %} 
+  아래 영역에는 articles의 index.html에만 해당하는 본문이 작성된다.
+{% endcomment %}
+{% block content %}
+  <h1 class="index-h1">메인 페이지 입니다.</h1>
+{% endblock content %}
