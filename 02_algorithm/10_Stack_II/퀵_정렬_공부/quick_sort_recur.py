@@ -1,5 +1,6 @@
 def quick_sort(lst):
-    if len(lst) <= 1:  # 분할 불가능 할 때까지 분할
+    # 분할 불가능 할 때까지 분할
+    if len(lst) <= 1:
         return lst
     else:
         pvt = lst[0]
