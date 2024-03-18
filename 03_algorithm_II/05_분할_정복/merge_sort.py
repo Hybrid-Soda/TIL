@@ -10,8 +10,8 @@ def merge_sort(arr):
     right_hand = arr[mid:]
 
     # 분할 함수 재귀
-    merge_sort(left_hand)
-    merge_sort(right_hand)
+    left_hand = merge_sort(left_hand)
+    right_hand = merge_sort(right_hand)
 
     # 왼쪽과 오른쪽 배열을 합병
     return merge(left_hand, right_hand)
