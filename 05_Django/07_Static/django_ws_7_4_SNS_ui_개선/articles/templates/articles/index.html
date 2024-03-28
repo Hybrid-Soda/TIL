@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1 class="mb-5">나만의 SNS 서비스</h1>
+  <a href="{% url 'articles:create' %}">
+      <button type="button" class="btn btn-primary">CREATE</button>
+  </a>
+
+  <ul>
+    {% for article in articles %}
+      {% if article.is_public %}
+        <a href="{% url 'articles:detail' article.pk%}">
+          {% if article.image %}
+          <img src="{{ article.image.url }}" alt="{{ article.image_description }}">
+          {% else %}  
+          <img src="{% static 'assets/noimage.png' %}" alt="noimage" style="max-width: 200px; max-height:200px;">
+          {% endif %}
+          <p>{{ article.title }}</p>
+        </a>
+        <hr>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock content %}

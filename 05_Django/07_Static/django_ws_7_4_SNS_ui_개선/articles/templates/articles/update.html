@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>게시글 수정 페이지</h1>
+
+  <form method="POST" enctype="multipart/form-data" class="mb-2">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-outline-primary" value="UPDATE">
+  </form>
+  <a href="{% url 'articles:detail' article.pk %}">
+    <button type="button" class="btn btn-outline-secondary">BACK</button>
+  </a>
+{% endblock content %}
+
