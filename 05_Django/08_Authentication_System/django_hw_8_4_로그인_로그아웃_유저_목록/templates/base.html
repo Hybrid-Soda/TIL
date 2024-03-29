@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Practice</title>
+  <style>
+    .home {
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <a href="{% url "accounts:index" %}">
+    <div class="home">HOME</div>
+  </a>
+  {% block content %}
+  {% endblock content %}
+</body>
+</html>
