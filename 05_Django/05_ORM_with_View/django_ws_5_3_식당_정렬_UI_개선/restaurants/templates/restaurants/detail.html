@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>맛집 상세 정보</h1>
+  <p>식당 번호 : {{ restaurant.pk }}</p>
+  <p>식당 이름 : {{ restaurant.name }}</p>
+  <p>식당 설명 : {{ restaurant.description }}</p>
+  <p>식당 위치 : {{ restaurant.address }}</p>
+  <p>전화 번호 : {{ restaurant.phone_number }}</p>
+  <hr>
+  <div class="d-flex">
+    <a href="{% url 'restaurants:edit' restaurant.pk %}" class="btn btn-primary me-3">UPDATE</a>
+    <form action="{% url 'restaurants:delete' restaurant.pk %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="DELETE" class="btn btn-danger">
+    </form>
+  </div>
+  <hr>
+  <a href="{% url 'restaurants:index' %}" class="btn btn-secondary">BACK</a>
+{% endblock content %}
