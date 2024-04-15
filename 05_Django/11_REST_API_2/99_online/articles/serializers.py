@@ -10,10 +10,17 @@ class ArticleListSerializer(serializers.ModelSerializer):
 
 
 class ArticleSerializer(serializers.ModelSerializer):
+    class CommentDetailSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Comment
+            fields = ('id', 'content',)
+
+    Comment = CommentDetailSerializer(read_only=True)
 
     class Meta:
         model = Article
         fields = '__all__'
+
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
