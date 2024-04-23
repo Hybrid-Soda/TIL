@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <h1>인기 영화들</h1>
+  <ul></ul>
+
+  <!-- axios CDN을 삽입한다. -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const ul = document.querySelector("ul")
+    const API_URI = 'https://api.themoviedb.org/3/movie/popular'
+    const API_KEY = ''
+
+    // GET 요청 실행
+    axios({
+      method: 'get',
+      url: API_URI,
+      params: {
+        api_key: API_KEY,
+        language: 'ko-KR',
+        page: 1,
+      }
+    })
+      .then(response => {
+        const movies = []
+        // 응답 받은 영화 순회
+        for (let i=0; i<response.data.results.length; i++) {
+          const result = response.data.results[i]
+          // vote_average 값이 7이상인 경우 배열에 추가
+          if (result.vote_average >= 7) {
+            movies.push(result.title)
+          }
+        }
+        return movies
+      })
+      .then(movies => {
+        // 구성이 완료된 배열을 순회하여 모든 정보를 화면에 렌더링
+        movies.forEach(element => {
+          const li = document.createElement('li')
+          li.textContent = element
+          ul.appendChild(li)
+        });
+      })
+      .catch(err => console.error(err));
+  </script>
+</body>
+</html>
