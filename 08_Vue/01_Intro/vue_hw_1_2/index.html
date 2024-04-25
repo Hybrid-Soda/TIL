@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 각 데이터는 template을 수정하여 적절하게 표기 될 수 있도록 작성 -->
+  <div id="app">
+    <h1 id="name">제 이름은 {{ name }} 입니다.</h1>
+    <p>저는 {{ age }} 살 입니다.</p>
+    <p>연락처 : {{ phone }} </p>
+  </div>
+
+  <!-- Vue3 CDN 사용 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    // 전역 Vue 객체
+    const { createApp, ref } = Vue
+
+    // Application Instance 생성
+    const app = createApp({
+      setup() {
+        // 이름, 나이, 연락처 정보를 각각 name, age, phone 변수에 할당
+        const name = ref('홍길동')
+        const age = ref(30)
+        const phone = ref('010-1234-1234')
+
+        return {
+          name,
+          age,
+          phone,
+        }
+      }
+    })
+    // 아이디가 app인 container 요소에 새로운 앱 인스턴스를 mount
+    app.mount('#app')
+  </script>
+</body>
+</html>
