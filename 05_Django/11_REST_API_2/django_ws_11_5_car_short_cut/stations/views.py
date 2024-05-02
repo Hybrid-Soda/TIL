@@ -63,5 +63,5 @@ def car_detail(request, car_pk):
         serializer = CarUpdateSerializer(car, data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
-            serializer = CarSerializer(car) 
+            serializer = CarSerializer(car)
             return Response(serializer.data)
