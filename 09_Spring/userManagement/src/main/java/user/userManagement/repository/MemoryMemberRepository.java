@@ -1,9 +1,11 @@
 package user.userManagement.repository;
 
+import org.springframework.stereotype.Repository;
 import user.userManagement.domain.Member;
 
 import java.util.*;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     // 회원 정보를 저장하는 HashMap, key는 회원 ID, value는 회원 객체
