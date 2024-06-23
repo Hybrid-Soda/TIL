@@ -15,7 +15,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6ccc273ea15d63a2b751e193b00cd69433824778
     @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
